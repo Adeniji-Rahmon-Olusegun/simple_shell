@@ -16,7 +16,7 @@ char **tokenize_cmd_first_string(char *cmd_string, char *delimeter, char *arg)
 	char **string_vector;
 	char *token, *token2, *src;
 	char *cmd_string_dup, *cmd_string_dup2;
-	char buff_c[35];
+	char buff_c[100];
 
 	arg_track = 0;
 	_strcpy_for_sshell(buff_c, arg);
@@ -35,7 +35,7 @@ char **tokenize_cmd_first_string(char *cmd_string, char *delimeter, char *arg)
 	{
 		_strcat_for_sshell(buff_c, src);
 		_strcat_for_sshell(buff_c, "\n");
-		write(STDOUT_FILENO, buff_c,  35);
+		write(STDOUT_FILENO, buff_c,  100);
 		exit(EXIT_FAILURE);
 	}
 
