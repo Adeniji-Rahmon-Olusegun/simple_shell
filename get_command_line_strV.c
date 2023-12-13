@@ -9,7 +9,7 @@
  * Return: void
  */
 
-void get_and_execute_command_linev(char *arg_string)
+void get_and_execute_command_linev(char *arg_string, char **env)
 {
 	int exec_err;
 	char *command;
@@ -26,7 +26,7 @@ void get_and_execute_command_linev(char *arg_string)
 		else
 		{
 			string_vector = tokenize_cmd_first_string(command, " \n\t", arg_string);
-			exec_err = execve(string_vector[0], string_vector, NULL);
+			exec_err = execve(string_vector[0], string_vector, env);
 
 			if (exec_err == -1)
 			{
