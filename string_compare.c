@@ -38,4 +38,4 @@ int _strcmp_for_sshell(char *s1, char *s2)
 	if (s1_len == s2_len && difference == 0)
 		difference = 0;
 	return (difference);
-
+}
