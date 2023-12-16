@@ -42,9 +42,9 @@ void sshell_interactive_mode(char **env, char *arg)
 			buffer_for_cmd[cmd_len - 1] = '\0';
 		}
 
-		string_vector = tokenize_cmd_first_string(buffer_for_cmd, " \t\n", arg);
+		string_vector = tokenize_cmd_strings(buffer_for_cmd, " \t\n");
 
-		if (string_vector != NULL)
+		if (string_vector[0] != NULL)
 			execute_command_line(string_vector, env, arg);
 		else
 			continue;
