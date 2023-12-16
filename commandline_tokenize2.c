@@ -39,7 +39,7 @@ char **tokenize_cmd_first_string(char *cmd_string, char *delimeter, char *arg)
 		free(cmd_string_dup);
 		free(cmd_string_dup2);
 		free(buff_c);
-		exit(EXIT_FAILURE);
+		return (NULL);
 	}
 	token2 = strtok(cmd_string_dup2, delimeter);
 	string_vector = malloc(sizeof(char *) * 2);
