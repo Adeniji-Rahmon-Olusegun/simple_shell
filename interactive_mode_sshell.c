@@ -29,7 +29,7 @@ void sshell_interactive_mode(char **env, char *arg)
 
 		bytes_read = getline(&buffer_for_cmd, &malloc_init, stdin);
 
-		if (bytes_read == -1 || _strcm_for_sshellp(buffer_for_cmd, "exit\n") == 0)
+		if (bytes_read == -1 || _strcmp_for_sshellp(buffer_for_cmd, "exit\n") == 0)
 		{
 			free(buffer_for_cmd);
 			break;
